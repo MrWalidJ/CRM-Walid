@@ -1,0 +1,26 @@
+.fa-eye{
+    color: red !important;
+    
+}
+.fa-pencil{
+    color:  red !important;
+    
+}
+.fa-trash{
+    color: red !important;
+    
+}
+
+
+.fa-eye:hover{
+    color: rgb(24, 206, 24) !important;
+    cursor: pointer;
+}
+.fa-pencil:hover{
+    color: rgb(24, 206, 24) !important;
+    cursor: pointer;
+}
+.fa-trash:hover{
+    color: rgb(24, 206, 24) !important;
+    cursor: pointer;
+}

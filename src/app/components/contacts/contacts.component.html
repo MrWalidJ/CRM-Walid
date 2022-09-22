@@ -1,0 +1,53 @@
+<div class="container mt-3">
+  <!-- <input
+  type="text"
+  class="form-control w-25 m-1"
+  [(ngModel)]="contName"
+  placeholder= "Contact Name"
+/>  -->
+  <div class="form-floating mb-3 w-25">
+    <input
+      type="text"
+      [(ngModel)]="contName"
+      class="form-control"
+      id="floatingInput"
+      placeholder="name@example.com"
+    />
+    <label for="floatingInput"><i class="fa-solid fa-magnifying-glass"></i> Contact name</label>
+  </div>
+  <br />
+  <div *ngIf="contacts | contactFilter: 'name':contName as contacts">
+    <ng-container *ngIf="contacts.length > 0; else noContacts">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Birthday</th>
+            <th>Phones</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let contact of contacts; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>
+              {{ formatDate(contact.birthday) }}
+            </td>
+            <td>
+              <ul *ngFor="let p of contact.phones">
+                <li>{{ p }}</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #noContacts>
+  <p>No contacts found</p>
+</ng-template>

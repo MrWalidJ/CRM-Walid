@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crm-walid": {
+      "hosting": {
+        "CRM-Walid": [
+          "crm-walid"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crm-walid"
+  }
+}

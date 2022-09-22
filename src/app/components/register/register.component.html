@@ -1,0 +1,54 @@
+<div class="container mx-auto my-5 col-3">
+    <h1 class="text-center">REGISTER</h1>
+    <form #registerForm="ngForm" (ngSubmit)="submitRegister()">
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="user.email"
+          #email="ngModel"
+          ngModel
+          email
+          minlength="6"
+          required
+        />
+        
+        <p>  <small *ngIf="email.invalid && email.touched" style="color: red"
+            >Valid email is required</small
+          ></p>
+          <label for="password">Password: </label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          ngModel
+          minlength="6"
+          [(ngModel)]="user.password"
+          #password="ngModel"
+          required
+        />
+        <p> <small *ngIf="password.invalid && password.touched" style="color: red"
+            >Password should be at least 6 characters long</small
+          ></p>
+      </div>
+  
+      <button
+        type="submit"
+        class="btn btn-success mt-3 w-100"
+        [disabled]="registerForm.invalid"
+      >
+        register
+      </button>
+    </form>
+    
+    <p style="font-weight: bold" class="mt-3">
+      Already a user ? Click<a routerLink="/login"> here</a>
+    </p>
+  
+  </div>
+  
+

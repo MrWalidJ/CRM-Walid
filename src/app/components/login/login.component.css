@@ -1,0 +1,7 @@
+.ng-valid[required]{
+    border: 2px solid rgb(14, 189, 14);
+}
+
+.ng-invalid[required] {
+    border: 2px solid red;
+}

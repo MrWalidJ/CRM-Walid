@@ -1,0 +1,77 @@
+<div class="container mx-auto my-5 col-3">
+  <h2 class="text-center">
+    COMPANY
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScwqyCSvYm7kNqI8NJtUtdmc1ONuf-JmfnsWo5pHkdq-cEQnlKrp_TtDD_rehgucgjTH0&usqp=CAU"
+      width="20"
+      height="25"
+    />
+    CRM
+  </h2>
+  <h5 class="text-center mb-4">Login with your account</h5>
+  <form #loginForm="ngForm" (ngSubmit)="submitLogin()">
+    <div class="form-group">
+      <div class="form-floating ">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          name="email"
+          ngModel
+          [(ngModel)]="user.email"
+          #email="ngModel"
+          email
+          minlength="6"
+          required
+        />
+        <label for="floatingInput">Email address</label>
+          
+      </div>
+      <small *ngIf="email.invalid && email.touched" style="color: red"
+      >Valid email is required</small
+    >
+    
+
+      <div class="form-floating mt-3">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          name="password"
+          ngModel
+          minlength="6"
+          [(ngModel)]="user.password"
+          #password="ngModel"
+          required
+        />
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <small *ngIf="password.invalid && password.touched" style="color: red"
+        >Password should be at least 6 characters long</small
+      >
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-success mt-3 w-100"
+      [disabled]="loginForm.invalid"
+    >
+      Login
+    </button>
+  </form>
+  <button class="btn btn-light mt-3 w-100  border-primary" (click)="submitLoginWithGoogle()">
+    <img
+      src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
+      width="25" height="25"
+    />
+    Login with google
+  </button>
+  <p style="font-weight: bold" class="mt-3">
+    New user ? register<a routerLink="/register"> here</a>
+  </p>
+  <!-- we add "/" here because we don't want route /login/register so we give it absolute
+  route with slash -->
+</div>

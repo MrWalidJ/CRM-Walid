@@ -1,0 +1,64 @@
+
+  <div class="row flex-nowrap ms-0">
+    <div class="  px-0 bg-primary">
+      <div
+        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100"
+      >
+        <ul
+          class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+          id="menu"
+        >
+          <li class="nav-item">
+            <a routerLink="/home" class="nav-link align-middle px-0 text-white">
+              <i class="fa-solid fa-people-group"></i>
+              <span class="ms-1 d-none d-sm-inline"> Customers</span>
+            </a>
+          </li>
+          <li>
+            <a
+            routerLink="/contacts-page"
+              data-bs-toggle="collapse"
+              class="nav-link px-0 align-middle text-white"
+            >
+              <i class="fa-solid fa-address-book"></i>
+              <span class="ms-1 d-none d-sm-inline"> Contacts</span>
+            </a>
+            <ul
+              class="collapse show nav flex-column ms-1"
+              id="submenu1"
+              data-bs-parent="#menu"
+            >
+              <li class="w-100">
+                <a  class="nav-link px-0 text-white">
+                  <i class="fa-regular fa-hand-point-up"></i>
+                  <span class="d-none d-sm-inline"> Leads </span>
+                </a>
+              </li>
+              <li>
+                <a  class="nav-link px-0 text-white">
+                  <i class="fa-solid fa-flag"></i>
+                  <span class="d-none d-sm-inline"> Reports</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a  class="nav-link px-0 align-middle text-white">
+              <i class="fa-solid fa-atom"></i>
+              <span class="ms-1 d-none d-sm-inline"> Integrations</span></a
+            >
+          </li>
+          <li>
+            <a
+              data-bs-toggle="collapse"
+              class="nav-link px-0 align-middle text-white"
+            >
+              <i class="fa-solid fa-calendar-days"></i>
+               <span class="ms-1 d-none d-sm-inline"> Year-end Sale</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+

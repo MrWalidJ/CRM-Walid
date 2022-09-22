@@ -1,0 +1,118 @@
+<div id="div_add" class="container">
+  <h3 class="d-flex justify-content-center my-2">Add New Customer</h3>
+  <form #addCustForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group w-50">
+      <label for="fname" class="mt-2 fw-bold">First name: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="fname"
+        name="fname"
+        placeholder="Enter first name"
+        [(ngModel)]="customer.Fname"
+        #Fname="ngModel"
+        minlength="2"
+        required
+      />
+      <p>
+        <small *ngIf="Fname.invalid && Fname.touched" style="color: red"
+          >First name should be at least 2 characters long</small
+        >
+      </p>
+
+      <label for="lname" class="mt-2 fw-bold">Last name: </label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter last name"
+        id="lname"
+        name="lname"
+        [(ngModel)]="customer.Lname"
+        #Lname="ngModel"
+        minlength="2"
+        required
+      />
+      <p>
+        <small *ngIf="Lname.invalid && Lname.touched" style="color: red"
+          >Last name should be at least 2 characters long</small
+        >
+      </p>
+
+      <label for="phone" class="mt-2 fw-bold">Phone: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="phone"
+        placeholder="Enter phone number"
+        name="phone"
+        [(ngModel)]="customer.phone"
+        #phone="ngModel"
+        minlength="5"
+        required
+      />
+      <p>
+        <small *ngIf="phone.invalid && phone.touched" style="color: red"
+          >Phone number should be at least 5 digits long</small
+        >
+      </p>
+      <label for="email" class="mt-2 fw-bold"> Email: </label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter email"
+        name="email"
+        [(ngModel)]="customer.email"
+        #email="ngModel"
+        email
+        minlength="6"
+        required
+      />
+      <p>
+        <small *ngIf="email.invalid && email.touched" style="color: red"
+          >Valid email is required
+        </small>
+      </p>
+
+      <label for="address" class="mt-2 fw-bold"> Address: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        name="address"
+        placeholder="Enter address"
+        [(ngModel)]="customer.address"
+        #address="ngModel"
+        minlength="2"
+        required
+      />
+      <p>
+        <small *ngIf="address.invalid && address.touched" style="color: red"
+          >Address should be at least 2 characters long</small
+        >
+      </p>
+      <label for="notes" class="mt-2 fw-bold"> notes: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="notes"
+        name="notes"
+        placeholder="Enter notes"
+        [(ngModel)]="customer.notes"
+        #notes="ngModel"
+       
+      />
+    </div><br>
+
+    <button
+      type="submit"
+      class="btn btn-danger me-5 fw-bold mb-3"
+      [disabled]="addCustForm.invalid"
+    >
+      Add Customer
+    </button>
+
+   
+  
+  </form>
+</div>
